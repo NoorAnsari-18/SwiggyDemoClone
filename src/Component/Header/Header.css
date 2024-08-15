@@ -1,0 +1,110 @@
+/* .logo{
+    width: 200px;
+} */
+
+/* Header styling */
+.header {
+    background-color: #ffffff; /* Adjust the color to match your header's background */
+    padding: 10px 20px; /* Adjust padding to match your design */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+  }
+  
+  /* Logo styling, assuming you want to maintain its aspect ratio */
+  .logo {
+    height: 80px; /* Adjust based on your header's height */
+    /* Keeps the aspect ratio intact */
+  }
+  
+  .logo img {
+    max-height: 100%;
+    width: auto; /* Adjust width automatically to maintain aspect ratio */
+  }
+  
+  /* Navigation styling */
+  .nav {
+    display: flex;
+    list-style-type: none;
+  }
+  
+  .nav-item {
+    margin-right: 20px; /* Adjust spacing between nav items */
+    /* color: black; */
+  }
+  .nav-item:hover, /* Hover effect for the entire nav item */
+  .nav-item:hover span img { /* Hover effect for images within the nav item */
+      color: orange; /* Change font color */
+      filter: grayscale(0%); /* Remove grayscale filter on image */
+  }
+  
+  /* Search bar styling */
+  .search-bar {
+    padding: 5px 10px;
+    margin-right: 20px; /* Spacing from the nav or other elements */
+  }
+  
+  /* Header utility icons (cart, account, etc.) */
+  .header-icons{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: space-between;
+    align-items: center;
+    color: orange;
+  }
+  .icon-with-label:hover {
+    color: orange; /* This changes the text color on hover */
+  }
+  .icon-with-label:hover .icon {
+    filter: brightness(0) saturate(100%) invert(29%) sepia(64%) saturate(5342%) hue-rotate(1deg) brightness(101%) contrast(101%);
+    /* This CSS filter approximates an orange color effect on PNG icons. You may need to adjust the values to match your desired orange color */
+  }
+  
+  .icon {
+    margin-left: 15px; /* Space between icons */
+    width: 30px;
+  }
+  
+  /* Additional elements like offers, help, etc. */
+  .offers,
+  .help {
+    margin-left: 15px;
+    
+  }
+  .offers:hover{
+    color: red
+  }
+  
+  /* Sign in and cart buttons */
+  .button {
+    padding: 5px 15px;
+    margin-left: 10px;
+  }
+  .icon.offer-icon:hover{
+    color: orange;
+  }
+  
+  /* Adjust the width based on the logo and the layout */
+  @media screen and (min-width: 1024px) {
+    .logo {
+      width: 200px; /* Example fixed width or use 'auto' for responsive */
+    }
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-direction: column;
+    }
+    
+    .nav-item,
+    .search-bar,
+    .header-icons,
+    .offers,
+    .help,
+    .button {
+      margin-bottom: 10px; /* Stack elements with space between */
+    }
+  }
+  
