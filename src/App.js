@@ -20,7 +20,7 @@ function App() {
        
       </header> */}
       <Header/>
-      <Outlet/>   {/*Providee by  the ReactRouter Library} */}
+      <Outlet/>
     </div>
   );
 }

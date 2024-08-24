@@ -4,7 +4,7 @@ import About from "../About/About";
 import { useParams } from "react-router-dom";
 import { Menu_API } from "../../constants";
 import Accordion from "../Accordion/Accordion";
-
+import ItemList from "../Accordion/ItemList";
 
 
 const Restaurants = () => {
@@ -51,28 +51,32 @@ const {itemCards} = restaurantMenu.cards[4].groupedCard.cardGroupMap.REGULAR.car
 
 var dat2 = itemCards;
 var data3 = restaurantMenu.cards[4].groupedCard.cardGroupMap.REGULAR.cards;
+const categoryData = restaurantMenu.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter (c => c.card?.["card"]?.["@type"] ==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 // console.log(data3);
+// console.log(categoryData);
 const rangeOfCards = data3.slice(1, 15);
 // console.log(rangeOfCards);
 // console.log(dat2[0]?.card.info.name);
 // console.log({dat2[0].card.info.name});
     return (
         <>
+        <div className="text-center">
 {/* {The Map Fucntion } */}
-        <h1>{name}</h1>
-        <span>{cuisines.join(",")}</span>
+        <h1 className="font-bold my-6 text-2xl">{name}</h1>
+        <span className="font-bold text-lg">{cuisines.join(",")}</span>
         <h4> Rs -{costForTwoMessage}</h4>
         <h2>Menu</h2>
       
                 <ul>
                 {
-                            rangeOfCards?.map(subdataobj => {
-                                console.log(subdataobj);
+                            categoryData?.map(subdataobj => {
+                                // console.log(subdataobj);
                                 var data2  = subdataobj.card.card.itemCards;
-                                // console.log(data2);
+                                console.log(subdataobj.card.card);
+                                console.log(data2);
                             return (
-                                <Accordion title={subdataobj.card?.card?.title}>
-                                <ul>
+                                <Accordion props={subdataobj.card.card}>
+                                {/* <ul>
                                   {
                                     data2?.map(restaurant_menu => {
                                       return (
@@ -82,7 +86,8 @@ const rangeOfCards = data3.slice(1, 15);
                                       );
                                     })
                                   }
-                                </ul>
+                                </ul> */}
+                                <ItemList restData = {data2}/>
                               </Accordion>
                             );
                             })
@@ -103,6 +108,7 @@ const rangeOfCards = data3.slice(1, 15);
           }
         </ul>
       </Accordion> */}
+      </div>
         </>
     )
 }

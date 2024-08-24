@@ -4,7 +4,7 @@ import React  from "react";
 const Contact = () =>{
     return(
         <>
-        These is a Contact Component
+        <div className ="text-3xl font-bold underline">These is a Contact Component</div>
         </>
     )
 }

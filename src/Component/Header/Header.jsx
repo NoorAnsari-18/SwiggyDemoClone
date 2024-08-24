@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import "./Header.css"
+// import "./Header.css"
 // Assume you have these icons as SVG or components
 import { SearchIcon, CartIcon, UserIcon, HelpIcon, OfferIcon } from './Icon';
 import { Link }  from 'react-router-dom';
@@ -22,28 +22,27 @@ const Header = () => {
 
 
   return (
-    <div className="header">
-      <div className="logo">
+    <div className="flex items-center justify-between border-b-2 border-solid border-black px-7 py-5 z-10">
+     <div>
         {/* Replace with your logo image or component */}
-        <img src="asset/Logo/LogoImage.webp" alt="Company Logo" />
+       <img src="asset/Logo/LogoImage.webp" alt="Company Logo"  className="h-20"/>
       </div>
-      <div className="header-icons">
-      <div className="search-bar">
-        {/* Simple search input, you might have a more complex component */}
+      <div className="flex justify-around  space-x-6">
+      {/* <div className="search-bar">
         <input type="text" placeholder="Search..." value=""/>
         <SearchIcon />
-      </div>
-        <div className="offers" style={{}}>
+      </div> */}
+        <div >
         <Link to="/">
             {/* <a href="/about"  className="nav-item"> */}
-            <span >Home<OfferIcon /></span>
+            <span className='text-black'>Home</span>
           {/* </a> */}
           </Link>
         </div>
-        <div className="help">
+        <div >
         <Link to="/contact">
         {/* <a href="/offers"> */}
-            <span style={{color:'black'}}>ContactUs<HelpIcon /></span>
+            <span className='text-black'>ContactUs</span>
           {/* </a> */}
           </Link>
         </div>
@@ -58,8 +57,13 @@ const Header = () => {
         </div> */}
         <div>
         {/* Buttons for sign in and cart could be actual 'button' elements or links styled as buttons */}
-        <a className="button" href="/signin">Sign In<UserIcon /></a>
-        <a className="button" href="/cart">Cart <CartIcon /></a>
+        <a className="button" href="/signin">Sign In</a>
+        
+      </div>
+      <div>
+        {/* Buttons for sign in and cart could be actual 'button' elements or links styled as buttons */}
+        <a className="button" href="/cart">Cart</a>
+        
       </div>
       </div>
       

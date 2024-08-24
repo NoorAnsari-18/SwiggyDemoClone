@@ -1,0 +1,55 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    width: 80%; /* Adjust based on how much width you want to cover */
+    gap: 10px;
+  }
+
+  .carousel-item {
+    flex: 1 0 auto;
+    text-align: center;
+    min-width: 16%; /* Adjust according to the number of images visible */
+    max-width: 16%;
+  }
+
+  .carousel-image {
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-image:hover {
+    transform: scale(1.1);
+  }
+
+  .carousel-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .carousel-button.left {
+    margin-right: 10px;
+  }
+
+  .carousel-button.right {
+    margin-left: 10px;
+  }
+
+  .carousel-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+  }

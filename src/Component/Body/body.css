@@ -1,6 +1,9 @@
 .restaurantList{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-top: 50px;
-    margin-left: 80px;
+    /* margin-left: 120px;
+    margin-right: 80px; */
+    /* background-color: yellow; */
 }
